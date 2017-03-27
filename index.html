@@ -79,6 +79,137 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/27/面试题目汇总/" title="面试题目汇总" itemprop="url">面试题目汇总</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="catying" target="_blank" itemprop="author">catying</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-27T14:16:55.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="面试过程中遇到的问题汇总"><a href="#面试过程中遇到的问题汇总" class="headerlink" title="面试过程中遇到的问题汇总"></a>面试过程中遇到的问题汇总</h1><p>更新时间：2017-03-27</p>
+<h3 id="饿了么前端"><a href="#饿了么前端" class="headerlink" title="饿了么前端"></a>饿了么前端</h3><ul>
+<li><p>三栏布局的实现</p>
+<ul>
+<li><p>参考 <a href="https://github.com/rccoder/blog/issues/6" target="_blank" rel="external">那些年，奇妙的圣杯与双飞翼，还有负边距</a></p>
+</li>
+<li><p>flex布局</p>
+</li>
+</ul>
+</li>
+<li><p>怎样实现prototype继承</p>
+<ul>
+<li>Javascript中的对象可以理解为一个指向prototype的指针和一个自身的属性列表</li>
+<li>只有构造器带有prototype的属性</li>
+<li>构造器包括：Object, Function, Array, Date, String</li>
+<li>每个Function都有一个默认属性prototype，而prototype的constructor默认指向这个函数</li>
+<li><p>现有Animal和Person两个类，要实现Person是Animal继承来的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">"p1"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>* 此时
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p.constructor === Person;</div><div class="line">Person.prototype.constructor === Person;</div></pre></td></tr></table></figure>
+
+* 修改
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Person.prototype = <span class="keyword">new</span> Animal();</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">"p2"</span>);</div><div class="line">p2.constructor !== Person;</div></pre></td></tr></table></figure>
+
+* __可以完成继承，但是不能判定p2是Person的实例__
+* __如果将constructor重新指向Person，又无法完成继承__
+
+* 解决方案
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Person.prototype = (funtion()&#123;</div><div class="line"></div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line">　　F.prototype = Animal.prototype;</div><div class="line"></div><div class="line">　　<span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line"></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>merge和rebase的区别</p>
+<ul>
+<li>merge的作用是将参数中的分支合并到现在的分支上，不保留原分支</li>
+<li>rebase的作用同上，但是保留原分支</li>
+</ul>
+</li>
+</ul>
+<h3 id="华为"><a href="#华为" class="headerlink" title="华为"></a>华为</h3><ul>
+<li><p>链表冒泡</p>
+<ul>
+<li>基础冒泡：遍历n-1遍，每次遍历都把最小的放在遍历首位</li>
+</ul>
+</li>
+<li><p>结构体内存对齐：</p>
+<ul>
+<li>编译器相关，一般对其4字节/8字节。</li>
+</ul>
+</li>
+</ul>
+<p>然后很奇怪的就不问了。。大概是因为问冒泡的时候我懵了一下……所以 <strong>基础很重要</strong> <strong>基础很重要</strong> <strong>基础很重要</strong></p>
+<h3 id="腾讯模拟笔试"><a href="#腾讯模拟笔试" class="headerlink" title="腾讯模拟笔试"></a>腾讯模拟笔试</h3><p>这是第三次带摄像头的笔试，我才想起来记下来自己不会的。。也是心大的不行</p>
+<ul>
+<li>最短寻道时间：保证每次寻道路经最短的算法</li>
+<li>子网划分</li>
+<li><p>enum枚举类型：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> weekday &#123;</div><div class="line">    sun, mon, tue, wed, thu, fri, sat</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>枚举元素又称枚举常量，不可以对枚举常量赋值</li>
+<li>自动对枚举常量赋值</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/tech/">tech</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/27/面试题目汇总/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/03/27/面试题目汇总/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/01/22/实习日记（壹）/" title="实习日记（壹）" itemprop="url">实习日记（壹）</a>
   </h1>
   <p class="article-author">By
@@ -307,7 +438,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/mood/">mood</a>
   </div>
 
 </div>
@@ -371,7 +502,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/mood/">mood</a>
   </div>
 
 </div>
@@ -435,7 +566,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/mood/">mood</a>
   </div>
 
 </div>
@@ -474,7 +605,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/blog/" title="blog">blog<sup>6</sup></a></li>
+			<li><a href="/categories/blog/" title="blog">blog<sup>7</sup></a></li>
 		  
 		
 		  
@@ -491,7 +622,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>6</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>7</sup></a></li>
 			
 		
 			
@@ -500,6 +631,10 @@
 		
 			
 				<li><a href="/tags/实习/" title="实习">实习<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
 			
 		
 		</ul>
