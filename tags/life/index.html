@@ -1,10 +1,10 @@
 
- <!DOCTYPE HTML>
+  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>categories | CatYing</title>
+    <title>标签 : life | CatYing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="catying">
@@ -13,13 +13,12 @@
     
     <meta name="description" content="做有灵魂的程序员">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://catying.github.io/categories/index.html">
+<meta property="og:title" content="CatYing">
+<meta property="og:url" content="https://catying.github.io/tags/life/index.html">
 <meta property="og:site_name" content="CatYing">
 <meta property="og:description" content="做有灵魂的程序员">
-<meta property="og:updated_time" content="2017-01-01T10:50:13.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="CatYing">
 <meta name="twitter:description" content="做有灵魂的程序员">
 
     
@@ -72,19 +71,31 @@
 </div>
       </header>
       <div id="container">
-          
+        
+
 <div class="archive-title" >
-<h2 class="category-icon">分类</h2>
-
-<a data-src="/categories/blog/" href="#blog" title="blog">blog<sup>8</sup></a>
-
-<a data-src="/categories/blog/mood/" href="#mood" title="mood">mood<sup>1</sup></a>
-
+  <h2 class="tag-icon">life</h2>
+  
 </div>
-<div id="main" class="archive-part">
-<div class="all-list-box"></div>
-</div>
+<div id="main" class="archive-part clearfix">
+  <div id="archive-page">
 
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/28/游戏人生/" title="游戏人生" itemprop="url">
+  
+
+    <time datetime="2017-03-28T12:46:32.000Z" itemprop="datePublished">2017-03-28</time>
+
+
+    <h1 itemprop="name">游戏人生</h1>
+
+  </a>
+</section>
+
+
+  </div>
+</div>
 
       </div>
       <footer><div id="footer" >
@@ -183,40 +194,10 @@ $(document).ready(function(){
 
 
 
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"catying"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
 
 
 
 
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var list    = $('.archive-title a'),
-      box     = $('.all-list-box'),
-      first   = $('.archive-title a:first-of-type');
-      box.load(first.attr('data-src').toString()+' #archive-page');
-      first.addClass('current');
-  list.each(function(){
-    $(this).click(function(){
-      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
-      box.load(listSrc);
-      list.removeClass('current');
-      $(this).addClass('current');
-     });  
-    });
-  }); 
-</script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
