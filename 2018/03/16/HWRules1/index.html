@@ -4,65 +4,74 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>面试题目汇总 | CatYing</title>
+    <title>HWRules1 | CatYing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="catying">
     
 
     
-    <meta name="description" content="面试过程中遇到的问题汇总更新时间：2017-03-27
-饿了么前端
-三栏布局的实现
+    <meta name="description" content="关于头文件
+头文件应当职责单一
 
-参考 那些年，奇妙的圣杯与双飞翼，还有负边距
+* 设计问题
+* 头文件变大
+* 被依赖模块增加，提高编译时间
+* 编译优化措施，头文件目录单一，减少搜索插入时间
+* 拒绝万能头文件
 
-flex布局
+禁止包含用不到的头文件（同上）
+头文件只适合放置声明，不适合放置实现
 
+* 放置实现的头文件如果被多个C文件包含，会出现重复声明和定义
 
+禁止在头文件中定义变量
+头文件应该向稳定的方向包含
 
-怎样实现prototype继承
-
-Javascript中的对象可以理解为一个指向prototype的指针和一个自身的属性列表
-只有构造器带有prototype的属性
-构造器包括：Object, Function, Array, Date, Str">
+* 头文件的包含关系代表一种依赖，头">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试题目汇总">
-<meta property="og:url" content="https://catying.github.io/2017/03/27/面试题目汇总/index.html">
+<meta property="og:title" content="HWRules1">
+<meta property="og:url" content="https://catying.github.io/2018/03/16/HWRules1/index.html">
 <meta property="og:site_name" content="CatYing">
-<meta property="og:description" content="面试过程中遇到的问题汇总更新时间：2017-03-27
-饿了么前端
-三栏布局的实现
+<meta property="og:description" content="关于头文件
+头文件应当职责单一
 
-参考 那些年，奇妙的圣杯与双飞翼，还有负边距
+* 设计问题
+* 头文件变大
+* 被依赖模块增加，提高编译时间
+* 编译优化措施，头文件目录单一，减少搜索插入时间
+* 拒绝万能头文件
 
-flex布局
+禁止包含用不到的头文件（同上）
+头文件只适合放置声明，不适合放置实现
 
+* 放置实现的头文件如果被多个C文件包含，会出现重复声明和定义
 
+禁止在头文件中定义变量
+头文件应该向稳定的方向包含
 
-怎样实现prototype继承
-
-Javascript中的对象可以理解为一个指向prototype的指针和一个自身的属性列表
-只有构造器带有prototype的属性
-构造器包括：Object, Function, Array, Date, Str">
-<meta property="og:updated_time" content="2017-03-27T14:18:28.028Z">
+* 头文件的包含关系代表一种依赖，头">
+<meta property="og:updated_time" content="2018-03-18T14:32:32.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试题目汇总">
-<meta name="twitter:description" content="面试过程中遇到的问题汇总更新时间：2017-03-27
-饿了么前端
-三栏布局的实现
+<meta name="twitter:title" content="HWRules1">
+<meta name="twitter:description" content="关于头文件
+头文件应当职责单一
 
-参考 那些年，奇妙的圣杯与双飞翼，还有负边距
+* 设计问题
+* 头文件变大
+* 被依赖模块增加，提高编译时间
+* 编译优化措施，头文件目录单一，减少搜索插入时间
+* 拒绝万能头文件
 
-flex布局
+禁止包含用不到的头文件（同上）
+头文件只适合放置声明，不适合放置实现
 
+* 放置实现的头文件如果被多个C文件包含，会出现重复声明和定义
 
+禁止在头文件中定义变量
+头文件应该向稳定的方向包含
 
-怎样实现prototype继承
-
-Javascript中的对象可以理解为一个指向prototype的指针和一个自身的属性列表
-只有构造器带有prototype的属性
-构造器包括：Object, Function, Array, Date, Str">
+* 头文件的包含关系代表一种依赖，头">
 
     
     <link rel="alternative" href="/atom.xml" title="CatYing" type="application/atom+xml">
@@ -120,14 +129,14 @@ Javascript中的对象可以理解为一个指向prototype的指针和一个自�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/27/面试题目汇总/" title="面试题目汇总" itemprop="url">面试题目汇总</a>
+      <a href="/2018/03/16/HWRules1/" title="HWRules1" itemprop="url">HWRules1</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="catying" target="_blank" itemprop="author">catying</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-27T14:16:55.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
+    <time datetime="2018-03-16T08:55:38.000Z" itemprop="datePublished"> 发表于 2018-03-16</time>
     
   </p>
 </header>
@@ -136,79 +145,89 @@ Javascript中的对象可以理解为一个指向prototype的指针和一个自�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面试过程中遇到的问题汇总"><span class="toc-number">1.</span> <span class="toc-text">面试过程中遇到的问题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#饿了么前端"><span class="toc-number">1.0.1.</span> <span class="toc-text">饿了么前端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#华为"><span class="toc-number">1.0.2.</span> <span class="toc-text">华为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#腾讯模拟笔试"><span class="toc-number">1.0.3.</span> <span class="toc-text">腾讯模拟笔试</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于头文件"><span class="toc-number">1.</span> <span class="toc-text">关于头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于函数"><span class="toc-number">2.</span> <span class="toc-text">关于函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语句编程规范"><span class="toc-number">3.</span> <span class="toc-text">语句编程规范</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="面试过程中遇到的问题汇总"><a href="#面试过程中遇到的问题汇总" class="headerlink" title="面试过程中遇到的问题汇总"></a>面试过程中遇到的问题汇总</h1><p>更新时间：2017-03-27</p>
-<h3 id="饿了么前端"><a href="#饿了么前端" class="headerlink" title="饿了么前端"></a>饿了么前端</h3><ul>
-<li><p>三栏布局的实现</p>
-<ul>
-<li><p>参考 <a href="https://github.com/rccoder/blog/issues/6" target="_blank" rel="external">那些年，奇妙的圣杯与双飞翼，还有负边距</a></p>
-</li>
-<li><p>flex布局</p>
-</li>
-</ul>
-</li>
-<li><p>怎样实现prototype继承</p>
-<ul>
-<li>Javascript中的对象可以理解为一个指向prototype的指针和一个自身的属性列表</li>
-<li>只有构造器带有prototype的属性</li>
-<li>构造器包括：Object, Function, Array, Date, String</li>
-<li>每个Function都有一个默认属性prototype，而prototype的constructor默认指向这个函数</li>
-<li><p>现有Animal和Person两个类，要实现Person是Animal继承来的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">"p1"</span>);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>* 此时
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p.constructor === Person;</div><div class="line">Person.prototype.constructor === Person;</div></pre></td></tr></table></figure>
-
-* 修改
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Person.prototype = <span class="keyword">new</span> Animal();</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">"p2"</span>);</div><div class="line">p2.constructor !== Person;</div></pre></td></tr></table></figure>
-
-* __可以完成继承，但是不能判定p2是Person的实例__
-* __如果将constructor重新指向Person，又无法完成继承__
-
-* 解决方案
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Person.prototype = (funtion()&#123;</div><div class="line"></div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line">　　F.prototype = Animal.prototype;</div><div class="line"></div><div class="line">　　<span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line"></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>merge和rebase的区别</p>
-<ul>
-<li>merge的作用是将参数中的分支合并到现在的分支上，不保留原分支</li>
-<li>rebase的作用同上，但是保留原分支</li>
-</ul>
-</li>
-</ul>
-<h3 id="华为"><a href="#华为" class="headerlink" title="华为"></a>华为</h3><ul>
-<li><p>链表冒泡</p>
-<ul>
-<li>基础冒泡：遍历n-1遍，每次遍历都把最小的放在遍历首位</li>
-</ul>
-</li>
-<li><p>结构体内存对齐：</p>
-<ul>
-<li>编译器相关，一般对其4字节/8字节。</li>
-</ul>
-</li>
-</ul>
-<p>然后很奇怪的就不问了。。大概是因为问冒泡的时候我懵了一下……所以 <strong>基础很重要</strong> <strong>基础很重要</strong> <strong>基础很重要</strong></p>
-<h3 id="腾讯模拟笔试"><a href="#腾讯模拟笔试" class="headerlink" title="腾讯模拟笔试"></a>腾讯模拟笔试</h3><p>这是第三次带摄像头的笔试，我才想起来记下来自己不会的。。也是心大的不行</p>
-<ul>
-<li>最短寻道时间：保证每次寻道路经最短的算法</li>
-<li>子网划分</li>
-<li><p>enum枚举类型：</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> weekday &#123;</div><div class="line">    sun, mon, tue, wed, thu, fri, sat</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>枚举元素又称枚举常量，不可以对枚举常量赋值</li>
-<li>自动对枚举常量赋值</li>
-</ul>
-</li>
-</ul>
+		<h2 id="关于头文件"><a href="#关于头文件" class="headerlink" title="关于头文件"></a>关于头文件</h2><blockquote>
+<p>头文件应当职责单一</p>
+</blockquote>
+<pre><code>* 设计问题
+* 头文件变大
+* 被依赖模块增加，提高编译时间
+* 编译优化措施，头文件目录单一，减少搜索插入时间
+* 拒绝万能头文件
+</code></pre><blockquote>
+<p>禁止包含用不到的头文件（同上）</p>
+<p>头文件只适合放置声明，不适合放置实现</p>
+</blockquote>
+<pre><code>* 放置实现的头文件如果被多个C文件包含，会出现重复声明和定义
+</code></pre><blockquote>
+<p>禁止在头文件中定义变量</p>
+<p>头文件应该向稳定的方向包含</p>
+</blockquote>
+<pre><code>* 头文件的包含关系代表一种依赖，头文件的变化会引起重新编译
+</code></pre><blockquote>
+<p>每个C文件应有一个同名的H文件，用于声明需要对外公开的接口</p>
+</blockquote>
+<pre><code>* 不想被别人看到的，隐藏在C文件里，最好声明成静态
+</code></pre><blockquote>
+<p>只能通过包含头文件的方式使用其他模块提供的接口，禁止在C中使用extern方式使用外部函数接口和变量</p>
+</blockquote>
+<pre><code>* 如果A模块对函数进行了修改，B模块会出现声明和实现不一致的情况
+</code></pre><blockquote>
+<p>禁止头文件循环依赖\</p>
+<p>总是编写内部的ifndef保护符</p>
+</blockquote>
+<pre><code>* ifndef A_H_
+* define A_H_
+</code></pre><blockquote>
+<p>头文件应当自包含</p>
+<p>禁止在extern C中包含头文件</p>
+</blockquote>
+<hr>
+<h2 id="关于函数"><a href="#关于函数" class="headerlink" title="关于函数"></a>关于函数</h2><blockquote>
+<p>子函数的好处</p>
+<p>降低复杂度，易于思考<br>便于协同开发<br>代码复用，减少代码量<br>封装变化<br>良好的可移植性</p>
+<p>  圈复杂度小于7</p>
+</blockquote>
+<pre><code>* 可执行的路径条数
+</code></pre><blockquote>
+<p>函数短小，小于50行</p>
+<p>嵌套层数小于5</p>
+<p>职责单一</p>
+<p>抽象层次单一</p>
+<p>参数不超过三个</p>
+<p>避免重复（代码复用）</p>
+<p>避免重入问题</p>
+</blockquote>
+<pre><code>* 使用公共资源，导致物品丢失问题就是重入问题
+*  时间：在函数执行完成之前，又一次被调用
+*  公共资源：只用函数对公共资源有访问的时候，才会有问题
+*  资源锁
+</code></pre><blockquote>
+<p>不要返回局部变量地址</p>
+</blockquote>
+<h2 id="语句编程规范"><a href="#语句编程规范" class="headerlink" title="语句编程规范"></a>语句编程规范</h2><blockquote>
+<p>效率&lt;可维护性</p>
+<p>常量/全局变量/静态变量/堆/栈/代码区</p>
+<p>常见问题</p>
+<p> 堆</p>
+<pre><code>* 申请内存判断是否成功
+* 申请自愿注意释放
+* 申请粒度不应当过细 
+</code></pre><p>栈</p>
+<pre><code>* 宝贵资源，效率较高，但有限
+* 不要返回或者传递栈变量
+</code></pre><p>强制类型转换</p>
+<pre><code>* 有无符号互转
+* 截断
+</code></pre><p>整数溢出<br>字节对齐</p>
+<pre><code>* 设计数据结构时设计为字节对齐无关
+</code></pre><p>字节序<br>字符串</p>
+<pre><code>*  慎用strcpy等函数
+</code></pre><p>*\是指针运算符，可以表示一个变量是指针类型，也可以表示一个指针变量的所指向的存储单元，可以获取某个地址存储的值<br>&amp; 是取地址符号，取得某一个变量的地</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -231,7 +250,7 @@ Javascript中的对象可以理解为一个指向prototype的指针和一个自�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://catying.github.io/2017/03/27/面试题目汇总/" data-title="面试题目汇总 | CatYing" data-tsina="null" class="share clearfix">
+	  <div data-url="https://catying.github.io/2018/03/16/HWRules1/" data-title="HWRules1 | CatYing" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -244,19 +263,11 @@ Javascript中的对象可以理解为一个指向prototype的指针和一个自�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/28/游戏人生/" title="游戏人生">
-  <strong>上一篇：</strong><br/>
-  <span>
-  游戏人生</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/01/22/实习日记（壹）/"  title="实习日记（壹）">
+<a href="/2017/04/22/抑郁是个神奇的东西/"  title="抑郁是个神奇的东西">
  <strong>下一篇：</strong><br/> 
- <span>实习日记（壹）
+ <span>抑郁是个神奇的东西
 </span>
 </a>
 </div>
@@ -265,7 +276,7 @@ Javascript中的对象可以理解为一个指向prototype的指针和一个自�
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/27/面试题目汇总/" data-title="面试题目汇总" data-url="https://catying.github.io/2017/03/27/面试题目汇总/"></div>
+	<div class="ds-thread" data-thread-key="2018/03/16/HWRules1/" data-title="HWRules1" data-url="https://catying.github.io/2018/03/16/HWRules1/"></div>
 </section>
 
 
@@ -275,7 +286,7 @@ Javascript中的对象可以理解为一个指向prototype的指针和一个自�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面试过程中遇到的问题汇总"><span class="toc-number">1.</span> <span class="toc-text">面试过程中遇到的问题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#饿了么前端"><span class="toc-number">1.0.1.</span> <span class="toc-text">饿了么前端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#华为"><span class="toc-number">1.0.2.</span> <span class="toc-text">华为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#腾讯模拟笔试"><span class="toc-number">1.0.3.</span> <span class="toc-text">腾讯模拟笔试</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于头文件"><span class="toc-number">1.</span> <span class="toc-text">关于头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于函数"><span class="toc-number">2.</span> <span class="toc-text">关于函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语句编程规范"><span class="toc-number">3.</span> <span class="toc-text">语句编程规范</span></a></li></ol>
  
   </div>
 

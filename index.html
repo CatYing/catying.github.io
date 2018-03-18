@@ -79,6 +79,147 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2018/03/16/HWRules1/" title="HWRules1" itemprop="url">HWRules1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="catying" target="_blank" itemprop="author">catying</a>
+		
+  <p class="article-time">
+    <time datetime="2018-03-16T08:55:38.000Z" itemprop="datePublished"> 发表于 2018-03-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="关于头文件"><a href="#关于头文件" class="headerlink" title="关于头文件"></a>关于头文件</h2><blockquote>
+<p>头文件应当职责单一</p>
+</blockquote>
+<pre><code>* 设计问题
+* 头文件变大
+* 被依赖模块增加，提高编译时间
+* 编译优化措施，头文件目录单一，减少搜索插入时间
+* 拒绝万能头文件
+</code></pre><blockquote>
+<p>禁止包含用不到的头文件（同上）</p>
+<p>头文件只适合放置声明，不适合放置实现</p>
+</blockquote>
+<pre><code>* 放置实现的头文件如果被多个C文件包含，会出现重复声明和定义
+</code></pre><blockquote>
+<p>禁止在头文件中定义变量</p>
+<p>头文件应该向稳定的方向包含</p>
+</blockquote>
+<pre><code>* 头文件的包含关系代表一种依赖，头文件的变化会引起重新编译
+</code></pre><blockquote>
+<p>每个C文件应有一个同名的H文件，用于声明需要对外公开的接口</p>
+</blockquote>
+<pre><code>* 不想被别人看到的，隐藏在C文件里，最好声明成静态
+</code></pre><blockquote>
+<p>只能通过包含头文件的方式使用其他模块提供的接口，禁止在C中使用extern方式使用外部函数接口和变量</p>
+</blockquote>
+<pre><code>* 如果A模块对函数进行了修改，B模块会出现声明和实现不一致的情况
+</code></pre><blockquote>
+<p>禁止头文件循环依赖\</p>
+<p>总是编写内部的ifndef保护符</p>
+</blockquote>
+<pre><code>* ifndef A_H_
+* define A_H_
+</code></pre><blockquote>
+<p>头文件应当自包含</p>
+<p>禁止在extern C中包含头文件</p>
+</blockquote>
+<hr>
+<h2 id="关于函数"><a href="#关于函数" class="headerlink" title="关于函数"></a>关于函数</h2><blockquote>
+<p>子函数的好处</p>
+<p>降低复杂度，易于思考<br>便于协同开发<br>代码复用，减少代码量<br>封装变化<br>良好的可移植性</p>
+<p>  圈复杂度小于7</p>
+</blockquote>
+<pre><code>* 可执行的路径条数
+</code></pre><blockquote>
+<p>函数短小，小于50行</p>
+<p>嵌套层数小于5</p>
+<p>职责单一</p>
+<p>抽象层次单一</p>
+<p>参数不超过三个</p>
+<p>避免重复（代码复用）</p>
+<p>避免重入问题</p>
+</blockquote>
+<pre><code>* 使用公共资源，导致物品丢失问题就是重入问题
+*  时间：在函数执行完成之前，又一次被调用
+*  公共资源：只用函数对公共资源有访问的时候，才会有问题
+*  资源锁
+</code></pre><blockquote>
+<p>不要返回局部变量地址</p>
+</blockquote>
+<h2 id="语句编程规范"><a href="#语句编程规范" class="headerlink" title="语句编程规范"></a>语句编程规范</h2><blockquote>
+<p>效率&lt;可维护性</p>
+<p>常量/全局变量/静态变量/堆/栈/代码区</p>
+<p>常见问题</p>
+<p> 堆</p>
+<pre><code>* 申请内存判断是否成功
+* 申请自愿注意释放
+* 申请粒度不应当过细 
+</code></pre><p>栈</p>
+<pre><code>* 宝贵资源，效率较高，但有限
+* 不要返回或者传递栈变量
+</code></pre><p>强制类型转换</p>
+<pre><code>* 有无符号互转
+* 截断
+</code></pre><p>整数溢出<br>字节对齐</p>
+<pre><code>* 设计数据结构时设计为字节对齐无关
+</code></pre><p>字节序<br>字符串</p>
+<pre><code>*  慎用strcpy等函数
+</code></pre><p>*\是指针运算符，可以表示一个变量是指针类型，也可以表示一个指针变量的所指向的存储单元，可以获取某个地址存储的值<br>&amp; 是取地址符号，取得某一个变量的地</p>
+</blockquote>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/tech/">tech</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2018/03/16/HWRules1/#comments" class="ds-thread-count comments-count-link" data-thread-key="2018/03/16/HWRules1/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/04/22/抑郁是个神奇的东西/" title="抑郁是个神奇的东西" itemprop="url">抑郁是个神奇的东西</a>
   </h1>
   <p class="article-author">By
@@ -121,7 +262,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/mood/">mood</a>
   </div>
 
 </div>
@@ -644,7 +785,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/mood/">mood</a>
   </div>
 
 </div>
@@ -708,7 +849,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/mood/">mood</a>
   </div>
 
 </div>
@@ -733,70 +874,10 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/01/01/First-Post/" title="First Post" itemprop="url">First Post</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="catying" target="_blank" itemprop="author">catying</a>
-		
-  <p class="article-time">
-    <time datetime="2017-01-01T10:29:41.000Z" itemprop="datePublished"> 发表于 2017-01-01</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>这是使用hexo发表的第一篇文章<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2017/01/01/First-Post/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/blog/">blog</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/mood/">mood</a><a href="/tags/blog/">blog</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/01/01/First-Post/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/01/01/First-Post/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -811,7 +892,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/blog/" title="blog">blog<sup>10</sup></a></li>
+			<li><a href="/categories/blog/" title="blog">blog<sup>11</sup></a></li>
 		  
 		
 		  
@@ -828,7 +909,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>9</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>10</sup></a></li>
 			
 		
 			
@@ -836,7 +917,7 @@
 			
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>2</sup></a></li>
+				<li><a href="/tags/tech/" title="tech">tech<sup>3</sup></a></li>
 			
 		
 			
@@ -914,7 +995,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
 		
 		<a href="/about" target="_blank" title="catying">catying</a>
 		
